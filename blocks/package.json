@@ -1,0 +1,22 @@
+{
+  "name": "nostrasponte-wiki",
+  "version": "1.0.0",
+  "main": "dist/bundle.js",
+  "author": "Mike Kühnapfel <mike.kuehnapfel@piraten-rek.de>",
+  "license": "GLPv3",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@wordpress/babel-preset-default": "^4.11.0",
+    "babel-loader": "^8.1.0",
+    "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "dev": "cross-env BABEL-ENV=default webpack --watch",
+    "build": "cross-env BABEL-ENV=default NODE_ENV=production webpack -p"
+  }
+}
