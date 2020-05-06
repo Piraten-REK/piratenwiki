@@ -1,5 +1,18 @@
 <?php
+/**
+ * @package piratenwiki
+ */
 
+/**
+ * Enqueue scripts for Piratenwiki Gutenberg Block
+ * @uses wp_register_script()
+ * @uses plugins_url()
+ * @uses plugin_dir_path()
+ * @uses wp_enqueue_scripts()
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ */
 function piwi_enqueue_block_editor_assets() {
 	wp_register_script(
 'piwi_blocks_bundle',

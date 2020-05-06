@@ -23,6 +23,7 @@
  * Text Domain: piratenwiki
  */
 
+// kill script if executed outside of wordpress
 if (!function_exists('add_action')) {
 	die("Hi there! I'm just a plugin not much I can do when called directly.");
 }
@@ -31,8 +32,13 @@ define('PIWI_PLUGIN_URL', __FILE__);
 
 // Includes
 include('includes/activate.php');
+include('includes/ajax.php');
 include('blocks/enqueue.php');
+include('includes/enqueue.php');
 
 // Hooks
 register_activation_hook(__FILE__, 'piwi_activate_plugin');
+add_action('wp_ajax_piratenwiki', 'piwi_ajax');
+add_action('wp_ajax_nopriv_piratenwiki', 'piwi_ajax');
 add_action('enqueue_block_editor_assets', 'piwi_enqueue_block_editor_assets');
+add_action('wp_enqueue_scripts', 'piwi_enqueue_frontend_scripts');
